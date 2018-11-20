@@ -6,5 +6,9 @@ public class Test
         Sorts.printArr(arr);
         Sorts.ascendingSort(arr);
         Sorts.printArr(arr);
+        String[] Arr = {"Andrew","Xinyi","Isiah","Richard","Andrew","Asllan","Jie","Jamil"};
+        Sorts.printArr(Arr);
+        Sorts.ascendingSort(Arr);
+        Sorts.printArr(Arr);
     }
 }
