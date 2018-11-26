@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class Sorts
 {
     public static void ascendingSort(int[] arr)
@@ -49,5 +51,18 @@ public class Sorts
         for(int i = 0; i < arr.length; i++)
             System.out.print(arr[i] + " ");
         System.out.println();
+    }
+    public static void ascendingSort(List<String> list)
+    {
+        for(int i = 0; i < list.size()-1; i++)
+        {
+            int lowPosition = i;
+            for(int j = i+1; j < list.size(); j++)
+            {
+                if(list.get(j).compareTo(list.get(lowPosition)) < 0)
+                    lowPosition = j;
+            }
+            list.set(i, list.set(lowPosition, list.get(i)));
+        }
     }
 }
