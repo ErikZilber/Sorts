@@ -65,4 +65,10 @@ public class Sorts
             list.set(i, list.set(lowPosition, list.get(i)));
         }
     }
+    public static void removeLongerThan(int maxLen, List<String> list)
+    {
+        for(int i = list.size() -1; i >= 0; i --)
+            if(list.get(i).length() > maxLen)
+                list.remove(i);
+    }
 }

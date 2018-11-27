@@ -9,8 +9,8 @@ public class Test
         Sorts.printArr(arr);
         Sorts.ascendingSort(arr);
         Sorts.printArr(arr);
-        String[] Arr = {"Andrew","Xinyi","Isiah","Richard","Andrew","Asllan","Jie","Jamil","Samuel","Alan"};
-        ArrayList<String> list = new ArrayList<String>();
+        String[] Arr = {"Andrew","Xinyi","Isiah","Richard","Andrew","Asllan","John","Jamil","Samuel","Alan"};
+        List<String> list = new ArrayList<String>();
         for(int i = 0; i < Arr.length; i++)
         {
             list.add(Arr[i]);
@@ -22,6 +22,9 @@ public class Test
         System.out.println(list);
 
         Sorts.ascendingSort(list);
+        System.out.println(list);
+
+        Sorts.removeLongerThan(4,list);
         System.out.println(list);
     }
 }
