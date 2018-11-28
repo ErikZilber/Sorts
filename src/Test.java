@@ -24,7 +24,12 @@ public class Test
         Sorts.ascendingSort(list);
         System.out.println(list);
 
-        Sorts.removeLongerThan(4,list);
+        System.out.println(Sorts.removeLongerThan(4,list));
         System.out.println(list);
+
+        int[] arr1 = {5,3,1,67,2,12,12,24,11,12,89,987,2334,1};
+        Sorts.printArr(arr1);
+        Sorts.insertionSort(arr1);
+        Sorts.printArr(arr1);
     }
 }

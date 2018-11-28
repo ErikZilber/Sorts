@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class Sorts
@@ -65,10 +66,28 @@ public class Sorts
             list.set(i, list.set(lowPosition, list.get(i)));
         }
     }
-    public static void removeLongerThan(int maxLen, List<String> list)
+    public static ArrayList<String> removeLongerThan(int maxLen, List<String> list)
     {
+        ArrayList<String> removedList = new ArrayList<String>();
         for(int i = list.size() -1; i >= 0; i --)
+        {
             if(list.get(i).length() > maxLen)
-                list.remove(i);
+                removedList.add(list.remove(i));
+        }
+        return removedList;
+    }
+    public static void insertionSort(int[] elements)
+    {
+        for(int i = 1; i < elements.length; i++)
+        {
+            int temp = elements[i];
+            int possibleIndex = i;
+            while(possibleIndex > 0 && temp < elements[possibleIndex - 1])
+            {
+                elements[possibleIndex] = elements[possibleIndex - 1];
+                possibleIndex--;
+            }
+            elements[possibleIndex] = temp;
+        }
     }
 }
