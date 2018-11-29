@@ -1,35 +1,43 @@
-import java.util.ArrayList;
-import java.util.List;
-
 public class Test
 {
     public static void main(String[] args)
     {
-        int[] arr = {5,3,1,67,2,12,12,24,11,12,89,987,2334,1};
-        Sorts.printArr(arr);
-        Sorts.ascendingSort(arr);
-        Sorts.printArr(arr);
-        String[] Arr = {"Andrew","Xinyi","Isiah","Richard","Andrew","Asllan","John","Jamil","Samuel","Alan"};
-        List<String> list = new ArrayList<String>();
-        for(int i = 0; i < Arr.length; i++)
-        {
-            list.add(Arr[i]);
-        }
-        Sorts.printArr(Arr);
-        Sorts.ascendingSort(Arr);
-        Sorts.printArr(Arr);
+        int[] arr1 = buildArray(100000);
+        int[] arr2 = arr1.clone();
 
-        System.out.println(list);
+        long start1 = System.currentTimeMillis();
+        Sorts.ascendingSort(arr1);
+        long end1 = System.currentTimeMillis();
+        long selectionTime1 = end1 - start1;
+        System.out.println("Selection sort on unsorted data: " + selectionTime1);
 
-        Sorts.ascendingSort(list);
-        System.out.println(list);
+        long start2 = System.currentTimeMillis();
+        Sorts.ascendingSort(arr1);
+        long end2 = System.currentTimeMillis();
+        long selectionTime2 = end2 - start2;
+        System.out.println("Selection sort on sorted data: " + selectionTime2);
 
-        System.out.println(Sorts.removeLongerThan(4,list));
-        System.out.println(list);
+        long start3 = System.currentTimeMillis();
+        Sorts.insertionSort(arr2);
+        long end3 = System.currentTimeMillis();
+        long selectionTime3 = end3 - start3;
+        System.out.println("Insertion sort on unsorted data: " + selectionTime3);
 
-        int[] arr1 = {5,3,1,67,2,12,12,24,11,12,89,987,2334,1};
-        Sorts.printArr(arr1);
-        Sorts.insertionSort(arr1);
-        Sorts.printArr(arr1);
+        long start4 = System.currentTimeMillis();
+        Sorts.insertionSort(arr2);
+        long end4 = System.currentTimeMillis();
+        long selectionTime4 = end4 - start4;
+        System.out.println("Insertion sort on sorted data: " + selectionTime4);
+    }
+    public static int[] buildArray(int size)
+    {
+        int[] arr = new int[size];
+        for(int i = 0; i < size; i++)
+            arr[i] = randomNumberGenerator(size);
+        return arr;
+    }
+    public static int randomNumberGenerator(int max)
+    {
+        return (int) (Math.random() * max);
     }
 }
